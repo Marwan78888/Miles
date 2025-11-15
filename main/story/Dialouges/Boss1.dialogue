@@ -1,0 +1,15 @@
+~ start
+Miles: [speed=0.3]H-hello...? [wait=0.4]Is... someone there?[/speed]  
+Eldren: [speed=0.25]Still wandering alone... [wait=0.3]just like your father...[/speed]  
+Miles: [speed=0.3]My father...? [wait=0.3]You... you knew him?![/speed]  
+Eldren: [speed=0.25][wave amp=15 freq=3]I did... once.[/wave] [wait=0.3]He was strong... [wait=0.3]but even strength fades...[/speed]  
+Miles: [speed=0.3]What do you mean? [wait=0.3]Where is he?! [wait=0.3]Please... tell me![/speed]  
+Eldren: [speed=0.25][shake rate=10 level=6]He’s beyond saving...[/shake] [wait=0.4]And soon... you will be too.[/speed]  
+Miles: [speed=0.3]W-what...? [wait=0.3][shake rate=20 level=8]Stay back![/shake] [wait=0.3]I don’t want to fight you![/speed]  
+Eldren: [speed=0.25][wave amp=20 freq=4]Fight...?[/wave] [wait=0.3]No... [wait=0.3]there’s no need for that.[/speed] [wait=0.4]You just need to *come with me.*[/speed]  
+Miles: [speed=0.3][shake rate=15 level=8]N-no!![/shake] [wait=0.3]I’m not going anywhere with you![/speed]  
+Eldren: [speed=0.25][shake rate=25 level=12]You are not escaping from me...[/shake]  
+Miles: [speed=0.3]Stay away!! [wait=0.3]Please— [wait=0.3][shake rate=30 level=12]leave me alone!![/shake][/speed]  
+Eldren: [speed=0.25][wave amp=25 freq=4]Run, little one...[/wave] [wait=0.3]I want to see how far you’ll go.[/speed]  
+
+=> END

@@ -1,0 +1,144 @@
+[gd_scene load_steps=28 format=3 uid="uid://by7ev4cnt0gx0"]
+
+[ext_resource type="Script" uid="uid://cs3avcirwaj56" path="res://Scripts/Dangers/Shotter1/bullet_shotter_1.gd" id="1_2wf8g"]
+[ext_resource type="Texture2D" uid="uid://doxbf5hxioo2" path="res://Assets/New/pelletEmitter/blue/projectile00.png" id="1_45tpi"]
+[ext_resource type="Texture2D" uid="uid://np0kgv8xcssu" path="res://Assets/New/pelletEmitter/blue/projectile01.png" id="2_mtpo6"]
+[ext_resource type="Texture2D" uid="uid://3s5rmrigi0vc" path="res://Assets/New/pelletEmitter/blue/impact00.png" id="2_nktpl"]
+[ext_resource type="Texture2D" uid="uid://b2lreegyjuqlx" path="res://Assets/New/pelletEmitter/blue/projectile02.png" id="3_e57q1"]
+[ext_resource type="Texture2D" uid="uid://m87tnhx7n05g" path="res://Assets/New/pelletEmitter/blue/impact01.png" id="3_jtp0k"]
+[ext_resource type="Texture2D" uid="uid://c18axcg1bt1px" path="res://Assets/New/pelletEmitter/blue/projectile03.png" id="4_1jil5"]
+[ext_resource type="Texture2D" uid="uid://bvjvb1505k0w5" path="res://Assets/New/pelletEmitter/blue/impact02.png" id="4_ej5lt"]
+[ext_resource type="Texture2D" uid="uid://b7sau740jqidl" path="res://Assets/New/pelletEmitter/blue/projectile04.png" id="5_7s564"]
+[ext_resource type="Texture2D" uid="uid://bqrcxwsdpwbko" path="res://Assets/New/pelletEmitter/blue/impact03.png" id="5_p65ew"]
+[ext_resource type="Texture2D" uid="uid://b0itnt0efvxve" path="res://Assets/New/pelletEmitter/blue/projectile05.png" id="6_bncdg"]
+[ext_resource type="Texture2D" uid="uid://dck1awavfnqjv" path="res://Assets/New/pelletEmitter/blue/impact04.png" id="6_fgom3"]
+[ext_resource type="Texture2D" uid="uid://cefsj0xemfcs7" path="res://Assets/New/pelletEmitter/blue/impact05.png" id="7_bo26v"]
+[ext_resource type="Texture2D" uid="uid://dvo457xm6v25j" path="res://Assets/New/pelletEmitter/blue/projectile06.png" id="7_qu16o"]
+[ext_resource type="Texture2D" uid="uid://c4wnn4t44ra0v" path="res://Assets/New/pelletEmitter/blue/projectile07.png" id="8_5limb"]
+[ext_resource type="Texture2D" uid="uid://b8aggfdjm3l0p" path="res://Assets/New/pelletEmitter/blue/impact06.png" id="8_s72tl"]
+[ext_resource type="Texture2D" uid="uid://chd0u2arl3fqi" path="res://Assets/New/pelletEmitter/blue/impact07.png" id="9_afmxt"]
+[ext_resource type="Texture2D" uid="uid://cbn0bctlvvpxe" path="res://Assets/New/pelletEmitter/blue/projectile08.png" id="9_n0fyd"]
+[ext_resource type="Texture2D" uid="uid://dcy8sgv8j2msr" path="res://Assets/New/pelletEmitter/blue/impact08.png" id="10_qv4qc"]
+[ext_resource type="Texture2D" uid="uid://cocikts7ewj5" path="res://Assets/New/pelletEmitter/blue/impact09.png" id="11_5dsqy"]
+[ext_resource type="Texture2D" uid="uid://tky0nfbomin1" path="res://Assets/New/pelletEmitter/blue/impact10.png" id="12_kb20h"]
+[ext_resource type="Texture2D" uid="uid://b72vdldhwqml5" path="res://Assets/New/pelletEmitter/blue/impact11.png" id="13_7qjwp"]
+[ext_resource type="Script" uid="uid://bc0fjaw3sdwk0" path="res://Scripts/Dangers/Death_Treager/death_trigger.gd" id="23_nktpl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d35iw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_nktpl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jtp0k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ej5lt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_p65ew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fgom3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bo26v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_s72tl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_afmxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qv4qc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_5dsqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_kb20h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_7qjwp")
+}],
+"loop": false,
+"name": &"destroy",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_45tpi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mtpo6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_e57q1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1jil5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7s564")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bncdg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qu16o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5limb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_n0fyd")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2wf8g"]
+radius = 1.83431
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nktpl"]
+radius = 2.58137
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jtp0k"]
+radius = 2.93412
+height = 5.92171
+
+[node name="Bullet_shotter1" type="RigidBody2D" node_paths=PackedStringArray("hit_area")]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_2wf8g")
+speed = 100.0
+hit_area = NodePath("Area2D")
+trail_spawn_interval = 0.08
+trail_spread = 0.5
+trail_color = Color(0, 0.588, 0.8, 0.602)
+trail_initial_scale = 0.6
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_d35iw")
+animation = &"destroy"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2wf8g")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_nktpl")
+
+[node name="DeathTrigger" type="Area2D" parent="."]
+script = ExtResource("23_nktpl")
+show_debug_messages = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathTrigger"]
+position = Vector2(0.0287615, -0.0027256)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_jtp0k")

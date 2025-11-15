@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dwpurpqpafgm4"
+path="res://.godot/imported/12. Clear Skies (Night Version).mp3-e543aa06fbfe5cac2958f5b4233db37b.mp3str"
+
+[deps]
+
+source_file="res://Audios/Sounds/12. Clear Skies (Night Version).mp3"
+dest_files=["res://.godot/imported/12. Clear Skies (Night Version).mp3-e543aa06fbfe5cac2958f5b4233db37b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

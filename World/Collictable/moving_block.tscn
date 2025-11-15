@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://t8cunujtdfbx"]
+
+[ext_resource type="Script" path="res://World/Collictable/moving_block.gd" id="1_r741d"]
+[ext_resource type="Texture2D" uid="uid://ditsst4b2k1vq" path="res://Assets/Danger/cassetteMidD.png" id="2_051ld"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_62e3c"]
+size = Vector2(79.8458, 47.8826)
+
+[node name="Moving_block" type="Node2D"]
+script = ExtResource("1_r741d")
+bounce_strength = 3.0
+particle_color = Color(0.252, 0.252, 0.252, 0.216)
+
+[node name="CassetteMidA-altAnchor" type="Sprite2D" parent="."]
+position = Vector2(39.7229, 26.8413)
+scale = Vector2(1.73961, 2.06225)
+texture = ExtResource("2_051ld")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-3.8147e-06, -1.90735e-06)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(39.9859, 24.0125)
+shape = SubResource("RectangleShape2D_62e3c")

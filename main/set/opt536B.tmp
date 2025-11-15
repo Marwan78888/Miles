@@ -1,0 +1,162 @@
+[gd_scene load_steps=5 format=3 uid="uid://f45wpkn06y68"]
+
+[ext_resource type="FontFile" uid="uid://b8dwu4i5wv1lq" path="res://as/f.TTF" id="1_b5m1q"]
+[ext_resource type="Script" path="res://main/set/option.gd" id="2_0u02p"]
+[ext_resource type="PackedScene" uid="uid://dlfewwna3gr38" path="res://main/set/input/button.tscn" id="3_avafi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ygpk6"]
+bg_color = Color(0, 0, 0, 0.698039)
+border_width_left = 100
+border_width_right = 100
+border_width_bottom = 4
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[node name="OPTION" type="TabContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(960, 490)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_b5m1q")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_ygpk6")
+theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_ygpk6")
+theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_ygpk6")
+theme_override_styles/tab_disabled = SubResource("StyleBoxFlat_ygpk6")
+theme_override_styles/tab_focus = SubResource("StyleBoxFlat_ygpk6")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ygpk6")
+tab_alignment = 1
+current_tab = 3
+clip_tabs = false
+script = ExtResource("2_0u02p")
+
+[node name="Video" type="TabBar" parent="."]
+visible = false
+layout_mode = 2
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hovered_color = Color(0, 0, 0, 1)
+theme_override_colors/font_unselected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+metadata/_tab_index = 0
+
+[node name="full_s" type="CheckBox" parent="Video"]
+layout_mode = 0
+offset_left = 1208.0
+offset_top = 306.0
+offset_right = 1384.0
+offset_bottom = 383.0
+theme_override_font_sizes/font_size = 50
+text = "full_sc"
+
+[node name="s_s" type="CheckBox" parent="Video"]
+layout_mode = 0
+offset_left = 1200.0
+offset_top = 391.0
+offset_right = 1402.0
+offset_bottom = 468.0
+theme_override_font_sizes/font_size = 50
+text = "screen "
+
+[node name="Audio" type="TabBar" parent="."]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_b5m1q")
+theme_override_font_sizes/font_size = 500
+metadata/_tab_index = 1
+
+[node name="master_v" type="HSlider" parent="Audio"]
+layout_mode = 0
+offset_left = 309.0
+offset_top = 404.0
+offset_right = 1632.0
+offset_bottom = 587.0
+value = 100.0
+
+[node name="sfx" type="HSlider" parent="Audio"]
+layout_mode = 0
+offset_left = 307.0
+offset_top = 549.0
+offset_right = 1630.0
+offset_bottom = 732.0
+value = 100.0
+
+[node name="Control" type="TabBar" parent="."]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_b5m1q")
+theme_override_font_sizes/font_size = 500
+metadata/_tab_index = 2
+
+[node name="i" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 5.0
+offset_top = 12.0
+offset_right = 1828.0
+offset_bottom = 986.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(750.695, 415.055)
+
+[node name="Actionlist" type="VBoxContainer" parent="Control/i"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 35.0
+offset_right = 1628.0
+offset_bottom = 301.0
+size_flags_horizontal = 3
+
+[node name="Button" parent="Control/i/Actionlist" instance=ExtResource("3_avafi")]
+layout_mode = 2
+
+[node name="Button2" parent="Control/i/Actionlist" instance=ExtResource("3_avafi")]
+layout_mode = 2
+
+[node name="Button3" parent="Control/i/Actionlist" instance=ExtResource("3_avafi")]
+layout_mode = 2
+
+[node name="Button4" parent="Control/i/Actionlist" instance=ExtResource("3_avafi")]
+layout_mode = 2
+
+[node name="Button5" parent="Control/i/Actionlist" instance=ExtResource("3_avafi")]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Control"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 0
+offset_left = 192.0
+offset_top = 645.0
+offset_right = 1620.0
+offset_bottom = 745.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 50
+text = "defult"
+
+[node name="system" type="TabBar" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_b5m1q")
+theme_override_font_sizes/font_size = 500
+metadata/_tab_index = 3
+
+[node name="Lang" type="OptionButton" parent="system"]
+layout_mode = 2
+offset_left = 476.0
+offset_top = 249.0
+offset_right = 559.0
+offset_bottom = 269.0
+
+[connection signal="toggled" from="Video/full_s" to="." method="_on_full_s_toggled"]
+[connection signal="toggled" from="Video/s_s" to="." method="_on_s_s_toggled"]
+[connection signal="drag_ended" from="Audio/master_v" to="." method="_on_master_v_drag_ended"]
+[connection signal="drag_ended" from="Audio/sfx" to="." method="_on_sfx_drag_ended"]
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]

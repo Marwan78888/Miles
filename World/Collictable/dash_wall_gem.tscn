@@ -1,0 +1,61 @@
+[gd_scene load_steps=16 format=3 uid="uid://cu83dhtykjowx"]
+
+[ext_resource type="Script" uid="uid://cxcg8ehtr2hr6" path="res://World/Collictable/dash_wall_gem.gd" id="1_ma7ry"]
+[ext_resource type="AudioStream" uid="uid://byvmrhds2f1ls" path="res://Audios/Collectables/Gems/game_gen_diamond_touch_01.ogg" id="2_8tf4a"]
+[ext_resource type="Texture2D" uid="uid://brg40ao2gk161" path="res://Assets/Collectables/dreamRefill/idle00.png" id="2_eww5q"]
+[ext_resource type="AudioStream" uid="uid://ckutn6bxlwa8m" path="res://Audios/Collectables/Gems/game_gen_diamond_touch_02.ogg" id="3_4x2oo"]
+[ext_resource type="Texture2D" uid="uid://ppg1ejkaqq" path="res://Assets/Collectables/dreamRefill/idle01.png" id="3_ipppa"]
+[ext_resource type="Texture2D" uid="uid://qmvjtkkrgd2d" path="res://Assets/Collectables/dreamRefill/idle02.png" id="4_dhgnp"]
+[ext_resource type="AudioStream" uid="uid://ctattn0nd6et3" path="res://Audios/Collectables/Gems/game_gen_diamond_touch_03.ogg" id="4_mn7th"]
+[ext_resource type="AudioStream" uid="uid://c1onnm5scv126" path="res://Audios/Collectables/Gems/game_gen_diamond_return_01.ogg" id="5_5og1i"]
+[ext_resource type="Texture2D" uid="uid://37spurx66ppm" path="res://Assets/Collectables/dreamRefill/idle03.png" id="5_dpjep"]
+[ext_resource type="AudioStream" uid="uid://bqo2ywgumn8x1" path="res://Audios/Collectables/Gems/game_gen_diamond_return_02.ogg" id="6_503yg"]
+[ext_resource type="Texture2D" uid="uid://c744f5uvfqr4r" path="res://Assets/Collectables/dreamRefill/idle04.png" id="6_qx7u1"]
+[ext_resource type="Texture2D" uid="uid://dqvyildfrlbx3" path="res://Assets/Collectables/dreamRefill/outline.png" id="7_ipppa"]
+[ext_resource type="AudioStream" uid="uid://b1x4olqfjwm6k" path="res://Audios/Collectables/Gems/game_gen_diamond_return_03.ogg" id="7_yuur4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qrkyb"]
+radius = 6.61961
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ny4a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_eww5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ipppa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dhgnp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dpjep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qx7u1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Dash_wall_gem" type="Area2D"]
+script = ExtResource("1_ma7ry")
+collect_sounds = Array[AudioStream]([ExtResource("2_8tf4a"), ExtResource("3_4x2oo"), ExtResource("4_mn7th")])
+respawn_sounds = Array[AudioStream]([ExtResource("5_5og1i"), ExtResource("6_503yg"), ExtResource("7_yuur4")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.315195, 0.567354)
+shape = SubResource("CircleShape2D_qrkyb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5ny4a")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.872225
+
+[node name="Outline" type="Sprite2D" parent="."]
+texture = ExtResource("7_ipppa")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

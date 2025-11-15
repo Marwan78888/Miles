@@ -1,0 +1,108 @@
+[gd_scene load_steps=16 format=3 uid="uid://bd01cmp2q8jrx"]
+
+[ext_resource type="Texture2D" uid="uid://bsw8b6uwkrtwh" path="res://Assets/Danger/Gost/MiniGhost_Idle.png" id="1_22xei"]
+[ext_resource type="Script" uid="uid://s7m6qnv5ry5x" path="res://body/Enemies/Ghost.gd" id="2_bci62"]
+[ext_resource type="Script" uid="uid://bc0fjaw3sdwk0" path="res://Scripts/Dangers/Death_Treager/death_trigger.gd" id="3_devgk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8p0a"]
+atlas = ExtResource("1_22xei")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybifw"]
+atlas = ExtResource("1_22xei")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjwd2"]
+atlas = ExtResource("1_22xei")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6s0tj"]
+atlas = ExtResource("1_22xei")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjas5"]
+atlas = ExtResource("1_22xei")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87cfo"]
+atlas = ExtResource("1_22xei")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02bxp"]
+atlas = ExtResource("1_22xei")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gnp4"]
+atlas = ExtResource("1_22xei")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jihvr"]
+atlas = ExtResource("1_22xei")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_76c36"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8p0a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybifw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjwd2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6s0tj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjas5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87cfo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02bxp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gnp4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jihvr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ci2w0"]
+radius = 6.57605
+height = 13.4328
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uvwpd"]
+radius = 6.02728
+
+[node name="Ghost" type="CharacterBody2D"]
+position = Vector2(1.33926, 106.044)
+scale = Vector2(1.014, 1.014)
+script = ExtResource("2_bci62")
+float_amplitude = 4.0
+float_frequency = 0.2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.014, 1.014)
+sprite_frames = SubResource("SpriteFrames_76c36")
+autoplay = "default"
+frame_progress = 0.280564
+
+[node name="DeathTrigger" type="Area2D" parent="."]
+script = ExtResource("3_devgk")
+show_debug_messages = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathTrigger"]
+position = Vector2(0.0287615, -0.0027256)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ci2w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_uvwpd")

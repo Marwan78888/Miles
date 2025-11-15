@@ -1,0 +1,1555 @@
+[gd_scene load_steps=95 format=4 uid="uid://d1ndkrwv7i6ay"]
+
+[ext_resource type="Script" uid="uid://cdswadb5we5ev" path="res://main/main_menu.gd" id="1_4u0aa"]
+[ext_resource type="Script" uid="uid://crxrq6ewbwjs1" path="res://Scripts/Main_Menu/menu.gd" id="2_8cpu2"]
+[ext_resource type="Shader" uid="uid://7o80rh1i86h" path="res://Assets/Shaders/Diagonal_Swapt_transition.gdshader" id="2_dhah8"]
+[ext_resource type="Texture2D" uid="uid://h2oq3mxd5e4f" path="res://Assets/Bgs/Main_3/Background-1.png" id="2_swir0"]
+[ext_resource type="Texture2D" uid="uid://b33dme8v8frhp" path="res://Assets/logo&Ui2/Arrow-Main-Menu.png" id="2_w2mlq"]
+[ext_resource type="Texture2D" uid="uid://nmlcnfyo6c7v" path="res://Assets/Bgs/Main_3/bgCliffsBack.png" id="3_blc50"]
+[ext_resource type="Texture2D" uid="uid://debp7br83vxr" path="res://Assets/Bgs/Main_3/bg2.png" id="4_wmwr8"]
+[ext_resource type="Texture2D" uid="uid://dvu26v8miimqe" path="res://Assets/Bgs/Main_3/bgCloud.png" id="5_3kfl2"]
+[ext_resource type="Script" uid="uid://djntvo8ajayel" path="res://Scripts/BG/Moving-Parallax.gd" id="5_blc50"]
+[ext_resource type="Texture2D" uid="uid://l586r5k7vcb3" path="res://Assets/Bgs/Main_3/vignette.png" id="6_eme2k"]
+[ext_resource type="Texture2D" uid="uid://c616blk84ajlx" path="res://Assets/Bgs/Main_3/bgCloudLoopDesat.png" id="6_wmwr8"]
+[ext_resource type="Texture2D" uid="uid://bdp0vffkyj84h" path="res://Assets/Tilesets/rockyReflection.png" id="7_i8inf"]
+[ext_resource type="Texture2D" uid="uid://bcft5cu7ud68y" path="res://Assets/Tilesets/bgFadedBrickBlue.png" id="8_y8q5a"]
+[ext_resource type="Texture2D" uid="uid://di5edi7ognqfg" path="res://Assets/Tilesets/AutumnGrass.png" id="9_klgad"]
+[ext_resource type="Texture2D" uid="uid://d1uu5cgvopal2" path="res://Assets/Tilesets/rockyCliffside.png" id="10_p5pie"]
+[ext_resource type="Texture2D" uid="uid://ckn31ecy5xn20" path="res://Assets/logo&Ui2/Game_Logo.png" id="11_widou"]
+[ext_resource type="Texture2D" uid="uid://c5hk6156qipt1" path="res://Assets/Characters/Player/idle00.png" id="15_dkni0"]
+[ext_resource type="Texture2D" uid="uid://byaxls2u8bnh6" path="res://Assets/Characters/Player/idle01.png" id="16_wjvkk"]
+[ext_resource type="Texture2D" uid="uid://c2d4peo3272fs" path="res://Assets/Characters/Player/idle02.png" id="17_clu5i"]
+[ext_resource type="Texture2D" uid="uid://dlp0dsfdbu1do" path="res://Assets/Characters/Player/idle03.png" id="18_rqjel"]
+[ext_resource type="Texture2D" uid="uid://cf2u7anr3wg0j" path="res://Assets/Characters/Player/idle04.png" id="19_ynhyd"]
+[ext_resource type="Texture2D" uid="uid://bu4cmgjfyadxv" path="res://Assets/Characters/Player/idle05.png" id="20_i6iyw"]
+[ext_resource type="Texture2D" uid="uid://ddrr8w80elonb" path="res://Assets/Characters/Player/idle06.png" id="21_a41eh"]
+[ext_resource type="Texture2D" uid="uid://dmdnp5agkwc2d" path="res://Assets/Characters/Player/idle07.png" id="22_7o8ag"]
+[ext_resource type="Texture2D" uid="uid://co6yrtrlj67b0" path="res://Assets/Characters/Player/idle08.png" id="23_3xff1"]
+[ext_resource type="Texture2D" uid="uid://bnu2kiea7b68f" path="res://Assets/Grass/top_a00.png" id="23_xq5w6"]
+[ext_resource type="Texture2D" uid="uid://b8jrgx7k0ictd" path="res://Assets/Grass/top_a01.png" id="24_6qndc"]
+[ext_resource type="FontFile" uid="uid://ddvfoyjuleyn" path="res://Save/Fonts/PlaypenSansArabic-Bold.ttf" id="24_ayn3n"]
+[ext_resource type="Texture2D" uid="uid://bum7083sxunwp" path="res://Assets/Grass/top_a02.png" id="25_0tsba"]
+[ext_resource type="Texture2D" uid="uid://lx6d3wimvfek" path="res://Assets/Grass/top_a03.png" id="26_byjw7"]
+[ext_resource type="PackedScene" uid="uid://duo0i845dfbak" path="res://main/set/input/button.tscn" id="27_dkni0"]
+[ext_resource type="Texture2D" uid="uid://wip27ixdu83b" path="res://Assets/Decors/Default/AncientRockA.png" id="27_nomyo"]
+[ext_resource type="Script" uid="uid://csnq116uwfwn8" path="res://Scripts/Main_Menu/setting_pannel.gd" id="27_wjvkk"]
+[ext_resource type="Texture2D" uid="uid://1ng6e5k7stjb" path="res://Assets/Decors/Default/AncientRockB.png" id="28_rmma2"]
+[ext_resource type="Texture2D" uid="uid://l6tomt3tegxh" path="res://Assets/logo&Ui2/CheckBox_Checked.png" id="28_ynhyd"]
+[ext_resource type="Texture2D" uid="uid://bl06ruurmtysl" path="res://Assets/logo&Ui2/CheckBox_NotChecked.png" id="29_i6iyw"]
+[ext_resource type="Texture2D" uid="uid://coduhbgijsrm2" path="res://Assets/logo&Ui2/Circle.png" id="30_a41eh"]
+[ext_resource type="Shader" uid="uid://ccoetselb4xgq" path="res://Assets/Shaders/ٍSwaying-Tree.tres" id="38_umowm"]
+[ext_resource type="Texture2D" uid="uid://dfksix4xfrt0m" path="res://Assets/Decors/Objects/fern_large.png" id="39_8jund"]
+[ext_resource type="Texture2D" uid="uid://d2n8cuk0pv867" path="res://Assets/Decors/Objects/flower_b.png" id="40_afqpu"]
+[ext_resource type="Texture2D" uid="uid://ba4ur7ibgxhrq" path="res://Assets/Decors/Objects/flower_d.png" id="41_8rujg"]
+[ext_resource type="Texture2D" uid="uid://b6y8liv2inneu" path="res://Assets/Decors/Objects/fern_small.png" id="42_gxvyx"]
+[ext_resource type="PackedScene" uid="uid://bys8x7ujdk882" path="res://main/Save_Slot/save_slots_scene.tscn" id="43_0tsba"]
+[ext_resource type="AudioStream" uid="uid://dwfx7h3l2t5gn" path="res://Audios/Sounds/Main_menu/12. Ohm.mp3" id="44_0tsba"]
+
+[sub_resource type="GDScript" id="GDScript_3kfl2"]
+script/source = "extends ParallaxLayer
+
+@export var CLOUD_SPEED : float = -2
+
+func _process(delta):
+	motion_offset.x += CLOUD_SPEED * delta
+"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rmma2"]
+texture = ExtResource("7_i8inf")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+5:14/0 = 0
+4:15/0 = 0
+5:15/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_umowm"]
+texture = ExtResource("8_y8q5a")
+texture_region_size = Vector2i(8, 8)
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8jund"]
+texture = ExtResource("9_klgad")
+texture_region_size = Vector2i(8, 8)
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_afqpu"]
+texture = ExtResource("10_p5pie")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+5:14/0 = 0
+0:15/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+3:15/0 = 0
+4:15/0 = 0
+5:15/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_oslnl"]
+tile_size = Vector2i(8, 8)
+sources/7 = SubResource("TileSetAtlasSource_umowm")
+sources/8 = SubResource("TileSetAtlasSource_8jund")
+sources/9 = SubResource("TileSetAtlasSource_afqpu")
+sources/10 = SubResource("TileSetAtlasSource_rmma2")
+
+[sub_resource type="GDScript" id="GDScript_4pqbp"]
+script/source = "extends ParallaxLayer
+
+@export var CLOUD_SPEED : float = -8
+
+func _process(delta):
+	motion_offset.x += CLOUD_SPEED * delta
+"
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ayn3n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_py2ge"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ifxty"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wm46x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_go30u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dji77"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_keyrt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0hhrj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1abay"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b5l24"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fumqw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_go30u"]
+
+[sub_resource type="Animation" id="Animation_wm46x"]
+resource_name = "Fade_Out_play"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 19.0]
+}
+
+[sub_resource type="Animation" id="Animation_go30u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_41y8q"]
+resource_name = "credits"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 19.0]
+}
+
+[sub_resource type="Animation" id="Animation_eo28r"]
+resource_name = "fade_out_tot"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 19.0]
+}
+
+[sub_resource type="Animation" id="Animation_3ej46"]
+resource_name = "quite"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 19.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dji77"]
+_data = {
+&"Fade_Out_play": SubResource("Animation_wm46x"),
+&"RESET": SubResource("Animation_go30u"),
+&"credits": SubResource("Animation_41y8q"),
+&"fade_out_tot": SubResource("Animation_eo28r"),
+&"quite": SubResource("Animation_3ej46")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dji77"]
+shader = ExtResource("2_dhah8")
+shader_parameter/progress = 0.0
+shader_parameter/direction = 1
+shader_parameter/mask_color = Color(0, 0, 0, 1)
+shader_parameter/steps = 10
+
+[sub_resource type="Animation" id="Animation_trgpn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [19.0]
+}
+
+[sub_resource type="Animation" id="Animation_uigiy"]
+resource_name = "new_animation"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [19.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2dy8h"]
+_data = {
+&"RESET": SubResource("Animation_trgpn"),
+&"new_animation": SubResource("Animation_uigiy")
+}
+
+[sub_resource type="Animation" id="Animation_byjw7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_0tsba"]
+resource_name = "new_animation"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 19.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nomyo"]
+_data = {
+&"RESET": SubResource("Animation_byjw7"),
+&"new_animation": SubResource("Animation_0tsba")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ttid"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_xq5w6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_6qndc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_0tsba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_byjw7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1abay"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_dkni0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_wjvkk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_clu5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_rqjel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ynhyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_i6iyw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_a41eh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_7o8ag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_3xff1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_15u4j"]
+shader = ExtResource("38_umowm")
+shader_parameter/WindStrength = 2.09
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aeftt"]
+bg_color = Color(0, 0, 0, 0.462745)
+
+[sub_resource type="Image" id="Image_0tsba"]
+data = {
+"data": PackedByteArray("sbGxALGxsQCxsbEAsbGxALGxsQCxsbEAsbGxALGxsQCxsbEAsbGxALKysgCysrIAsbGxALGxsQCxsbEAsbGxALGxsQCxsbEAsbGxALGxsQCxsbEAsbGxALKysgCysrIAsbGxALGxsQCxsbEAsbGxALGxsQCysrIAsrKyALGxsQCxsbEAsbGxALKysgCysrIAsbGxALGxsZmxsbGmsbGxErKysgCysrIAsrKyALKysgCxsbESsbGxprKyspeysrIAsbGxALGxsaaysrLZsrKysrKyshKysrIAsrKyALKyshKysrKzsrKy2bKysqWysrIAsbGxALGxsRKysrKysrKy2bKysrKysrISsrKyErKysrOysrLZsrKysrKyshGysrIAsbGxALKysgCysrISsrKysrKystmysrLFsrKyxbKystmysrKysrKyEbKysgCysrIAsrKyALKysgCysrIAsrKyErKysrKysrLZsrKy2bKysrKysrIRsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKyshKysrKlsrKypbKyshGysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIAsrKyALKysgCysrIA"),
+"format": "RGBA8",
+"height": 12,
+"mipmaps": false,
+"width": 12
+}
+
+[sub_resource type="ImageTexture" id="ImageTexture_umowm"]
+image = SubResource("Image_0tsba")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8jund"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_afqpu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8rujg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxvyx"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.101961, 0.101961, 0.101961, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ttid"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.225, 0.225, 0.225, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_15u4j"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ycfo"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03dnb"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ol4xx"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="Theme" id="Theme_xq5w6"]
+default_font = ExtResource("24_ayn3n")
+OptionButton/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+OptionButton/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+OptionButton/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+OptionButton/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+OptionButton/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+OptionButton/colors/font_outline_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_pressed_color = Color(1, 1, 1, 1)
+OptionButton/constants/arrow_margin = 4
+OptionButton/constants/h_separation = 4
+OptionButton/constants/modulate_arrow = 0
+OptionButton/constants/outline_size = 0
+OptionButton/font_sizes/font_size = 16
+OptionButton/fonts/font = ExtResource("24_ayn3n")
+OptionButton/icons/arrow = SubResource("ImageTexture_umowm")
+OptionButton/icons/icon = null
+OptionButton/styles/disabled = SubResource("StyleBoxEmpty_8jund")
+OptionButton/styles/disabled_mirrored = SubResource("StyleBoxEmpty_afqpu")
+OptionButton/styles/focus = SubResource("StyleBoxEmpty_8rujg")
+OptionButton/styles/hover = SubResource("StyleBoxFlat_gxvyx")
+OptionButton/styles/hover_mirrored = SubResource("StyleBoxFlat_5ttid")
+OptionButton/styles/normal = SubResource("StyleBoxFlat_15u4j")
+OptionButton/styles/normal_mirrored = SubResource("StyleBoxFlat_8ycfo")
+OptionButton/styles/pressed = SubResource("StyleBoxFlat_03dnb")
+OptionButton/styles/pressed_mirrored = SubResource("StyleBoxFlat_ol4xx")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dkni0"]
+
+[sub_resource type="GDScript" id="GDScript_wjvkk"]
+script/source = "extends Control
+
+
+@onready var input_button_scene = preload(\"res://main/set/input/input_button.tscn\")
+@onready var action_list = $PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList
+
+
+var is_remapping = false
+var action_to_remap = null
+var remapping_button = null
+var input_actions = {
+	\"dash\": \"Dash\",
+	\"jump\": \"Jump\",
+	\"ui_right\": \"Move Right\",
+	\"ui_left\": \"Move Left\",
+}
+
+func _ready() -> void:
+	_create_action_list()
+
+
+func _create_action_list():
+	InputMap.load_from_project_settings()
+	for item in action_list.get_children():
+		item.queue_free()
+		
+	for action in input_actions:
+		var button = input_button_scene.instantiate()
+		var action_label = button.find_child(\"LabelAction\")
+		var input_label = button.find_child(\"LabelInput\")
+		
+		action_label.text = input_actions[action]
+		
+		var events = InputMap.action_get_events(action)
+		if events.size() > 0:
+			input_label.text = events[0].as_text().trim_suffix(\" (Physical)\")
+		else:
+			input_label.text = \"\"
+		
+		action_list.add_child(button)
+		button.pressed.connect(_on_input_button_pressed.bind(button, action))
+		
+		
+func _on_input_button_pressed(button, action):
+	if !is_remapping:
+		is_remapping = true
+		action_to_remap = action
+		remapping_button = button
+		button.find_child(\"LabelInput\").text = \"Press Key To Bind...\"
+		
+		
+func _input(event):
+	if is_remapping:
+		if(
+			event is InputEventKey ||
+			(event is InputEventMouseButton && event.pressed)
+		):
+			
+			if event is InputEventMouseButton && event.double_click:
+				event.double_click = false
+			
+			InputMap.action_erase_events(action_to_remap)
+			InputMap.action_add_event(action_to_remap, event)
+			_update_action_list(remapping_button, event)
+			
+			is_remapping = false 
+			action_to_remap = null
+			remapping_button = null
+			
+			accept_event()
+
+
+func _update_action_list(button, event):
+	button.find_child(\"LabelInput\").text = event.as_text().trim_suffix(\" (Physical)\")
+
+
+func _on_reset_button_pressed() -> void:
+	_create_action_list()
+
+
+func _on_back_pressed() -> void:
+	self.hide()
+	%GameLogo.hide()
+	%Menu.hide()
+	%Setting_pannel.show()
+"
+
+[node name="Main_Menu" type="Node2D"]
+script = ExtResource("1_4u0aa")
+
+[node name="Game" type="Node" parent="."]
+
+[node name="Bg" type="Node" parent="Game"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Game/Bg"]
+
+[node name="Background-1" type="Sprite2D" parent="Game/Bg/ParallaxBackground"]
+position = Vector2(159, 90)
+texture = ExtResource("2_swir0")
+
+[node name="Hills" type="ParallaxLayer" parent="Game/Bg/ParallaxBackground"]
+position = Vector2(-2, 0)
+motion_mirroring = Vector2(320, 180)
+
+[node name="BgCliffsBack" type="Sprite2D" parent="Game/Bg/ParallaxBackground/Hills"]
+modulate = Color(1, 1, 1, 0.72549)
+position = Vector2(160, 65)
+texture = ExtResource("3_blc50")
+
+[node name="Trees" type="ParallaxLayer" parent="Game/Bg/ParallaxBackground"]
+position = Vector2(-2, 0)
+motion_mirroring = Vector2(320, 180)
+
+[node name="Bg1" type="Sprite2D" parent="Game/Bg/ParallaxBackground/Trees"]
+position = Vector2(161, 95)
+texture = ExtResource("4_wmwr8")
+
+[node name="Clouds" type="ParallaxLayer" parent="Game/Bg/ParallaxBackground"]
+position = Vector2(-11, -79)
+motion_mirroring = Vector2(320, 180)
+script = ExtResource("5_blc50")
+
+[node name="BgCloudLoopDesat" type="Sprite2D" parent="Game/Bg/ParallaxBackground/Clouds"]
+modulate = Color(1, 1, 1, 0.380392)
+position = Vector2(172, 177)
+texture = ExtResource("6_wmwr8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Game/Bg"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Game/Bg/CanvasLayer"]
+
+[node name="Clouds2" type="ParallaxLayer" parent="Game/Bg/CanvasLayer/ParallaxBackground"]
+position = Vector2(980, 140)
+motion_mirroring = Vector2(320, 180)
+script = SubResource("GDScript_3kfl2")
+
+[node name="BgCloudLoopDesat" type="Sprite2D" parent="Game/Bg/CanvasLayer/ParallaxBackground/Clouds2"]
+modulate = Color(1, 1, 1, 0.380392)
+position = Vector2(-829, 26)
+scale = Vector2(1, -1)
+texture = ExtResource("5_3kfl2")
+
+[node name="Vignette" type="Sprite2D" parent="Game/Bg/CanvasLayer"]
+modulate = Color(0, 0, 0, 0.286275)
+position = Vector2(160, 91.5)
+scale = Vector2(0.166666, 0.171296)
+texture = ExtResource("6_eme2k")
+
+[node name="Tilesets" type="Node" parent="Game"]
+
+[node name="BackTiles2" type="TileMapLayer" parent="Game/Tilesets"]
+tile_map_data = PackedByteArray("AAAUABAABwAFAAUAAAAUABEABwAFAAYAAAAVABAABwACAAQAAAAVABEABwAGAAYAAAATABEABwAFAAUAAAAVAA8ABwAFAAUAAAAWAA8ABwAGAAUAAAAWABAABwAGAAYAAAAXAA8ABwAJAAUAAAAXABAABwAJAAYAAAAYAA8ABwAKAAUAAAAYABAABwABAAQAAAAZABAABwAKAAUAAAAaABEABwAKAAUAAAAZABEABwABAAQAAAAWABEABwAHAAcAAAAWABIABwAHAAgAAAAXABEABwAHAAcAAAAXABIABwAHAAgAAAAYABEABwAIAAcAAAAYABIABwAIAAgAAAAUABIABwAIAAgAAAAVABIABwAIAAgAAAATABIABwAHAAgAAAAZABIABwAHAAgAAAAaABIABwAIAAgAAAAcAA4ABwAFAAUAAAAdAA4ABwAKAAUAAAAeAA8ABwAKAAUAAAAeABAABwAKAAYAAAAeABEABwAKAAcAAAAeABIABwAKAAgAAAAcAA8ABwAFAAYAAAAcABAABwAFAAcAAAAcABEABwAFAAgAAAAcABIABwAFAAcAAAAdAA8ABwABAAQAAAAdABEABwAGAAgAAAAdABIABwAGAAgAAAAdABAABwAGAAcAAAAjAA0ABwAJAAEAAAAjAA4ABwAFAAcAAAAjAA8ABwAFAAgAAAAkAA4ABwAHAAUAAAAkAA8ABwAHAAYAAAAlAA4ABwAHAAUAAAAlAA8ABwAHAAYAAAAlAAIABwAFAAUAAAAkAAQABwAFAAUAAAAkAAUABwAFAAYAAAAkAAYABwAFAAcAAAAlAAMABwAFAAYAAAAlAAUABwAIAAcAAAAlAAYABwAIAAgAAAAlAAQABwACAAQAAAAmAAIABwAIAAcAAAAmAAMABwAIAAgAAAAmAAQABwAIAAcAAAAmAAUABwAIAAgAAAAmAAYABwAIAAcAAAA=")
+tile_set = SubResource("TileSet_oslnl")
+
+[node name="FrontTiles1" type="TileMapLayer" parent="Game/Tilesets"]
+tile_set = SubResource("TileSet_oslnl")
+
+[node name="FrontTiles" type="TileMapLayer" parent="Game/Tilesets"]
+tile_map_data = PackedByteArray("AAATABIACQAAAAsAAAATABMACQABAAIAAAATABQACQACAA0AAAAUABQACQACAAEAAAAVABUACQABAAIAAAAVABYACQACAAIAAAAVABQACQAEAAIAAAAlAAwACQADAAEAAAAlAA0ACQADAAIAAAAlAA4ACQADAAMAAAAlAA8ACQADAAQAAAAlAAsACQADAAAAAAAmAAMACgABAAIAAAAmAAYACgAAAAIAAAAmAAEACgAAAAIAAAAmAAIACQAAAAIAAAAmAAAACQACAAIAAAAmAAUACQADAAIAAAAmAAQACQABAAIAAAAmAAsACQAEAAAAAAAmAAwACQAEAAEAAAAmAA0ACQAFAAQAAAAmAA4ACQAFAAEAAAAmAA8ACQAFAAMAAAAnAAsACQAFAAAAAAAnAAwACQAFAAEAAAAnAA0ACQAFAAIAAAAnAA4ACQAFAAMAAAAnAA8ACQAFAAQAAAAnAAMACQAFAAgAAAAnAAQACQAFAAAAAAAnAAUACQAFAAMAAAAnAAYACQAFAAQAAAAnAAAACQAFAAQAAAAnAAEACQAFAAAAAAAnAAIACQAFAAIAAAAWABMACQAFAAAAAAAWABQACQAFAAIAAAAWABUACQAFAAEAAAAWABYACQAFAA8AAAAXABMACQAFAAAAAAAXABQACQAFAAcAAAAXABUACQAFAA4AAAAXABYACQAFAA8AAAAYABMACQAFAAAAAAAYABQACQAFAAIAAAAYABYACAAFAAYAAAAZABMACQAFAAIAAAAZABQACQAFAA0AAAAZABUACAAHAAUAAAAZABYACAAGAAYAAAAUABMACQAFAAQAAAAVABMACQAFAAIAAAAnAAkACAAIAAkAAAAnAAoACAAIAAoAAAAlAAoACAAGAAoAAAAmAAoACAAHAAoAAAAaABIACAAFAAUAAAAaABMACAAFAAYAAAAaABQACAAFAAcAAAAbABMACAAGAAYAAAAbABQACAAGAAcAAAAYABUACAAFAAUAAAAbABIACAAGAAUAAAAcABIACAAHAAUAAAAcABMACAAHAAYAAAAdABIACAAIAAUAAAAdABMACAAIAAYAAAAeABIACAAJAAUAAAAeABMACAAJAAYAAAAfABIACAAGAAUAAAAfABMACAAGAAYAAAAgABIACAAHAAUAAAAgABMACAAHAAYAAAAhABIACAAIAAUAAAAhABMACAAIAAYAAAAiABIACAAJAAUAAAAiABMACAAJAAYAAAAjABAACAAFAAUAAAAjABEACAAFAAYAAAAkABAACAAGAAUAAAAkABEACAAGAAYAAAAlABAACAAHAAUAAAAlABEACAAHAAYAAAAmABAACAAIAAUAAAAmABEACAAIAAYAAAAnABAACAAJAAUAAAAnABEACAAJAAYAAAAjABIACAACAAQAAAAkAAcACAAFAAUAAAAkAAgACAAFAAYAAAAlAAcACAAGAAUAAAAlAAgACAAGAAYAAAAkAAkACAAFAAkAAAAkAAoACAAFAAoAAAAlAAkACAAGAAkAAAAmAAkACAAHAAkAAAAmAAcACAAHAAUAAAAmAAgACAAHAAYAAAAnAAcACAAIAAUAAAAnAAgACAAIAAYAAAAaABUACAACAAQAAAAaABYACAAIAAYAAAAbABUACAAJAAcAAAAkABIACAAIAAYAAAAjABMACAAJAAcAAAAfABUACAAHAAcAAAAfABYACAAHAAgAAAAgABUACAAIAAcAAAAgABYACAAIAAgAAAAlABMACAAHAAcAAAAlABQACAAHAAgAAAAmABMACAAIAAcAAAAmABQACAAIAAgAAAAlABIACAAHAAYAAAAmABIACAAIAAYAAAAnABIACAAJAAYAAAAcABQACAAHAAYAAAAdABQACAAIAAYAAAAeABQACAAJAAYAAAAfABQACAAHAAYAAAAgABQACAAIAAYAAAAhABQACAAJAAcAAAAiABQACAAHAAYAAAAjABQACAAIAAYAAAAkABQACAAJAAgAAAAiABUACAAHAAYAAAAjABUACAAIAAYAAAAkABUACAAJAAcAAAAhABYACAAHAAYAAAAiABYACAAIAAYAAAAjABYACAAJAAYAAAAcABYACAAHAAYAAAAdABYACAAIAAYAAAAeABYACAAJAAYAAAAcABUACAAHAAYAAAAdABUACAAIAAYAAAAeABUACAAJAAYAAAAmABUACAAHAAYAAAAnABUACAAJAAgAAAAoABUACAAJAAYAAAAlABYACAAJAAgAAAAmABYACAAIAAYAAAAnABYACAAJAAYAAAAnABMACAAHAAYAAAAnABQACAAJAAcAAAAlABUACAAJAAcAAAAkABYACAAJAAgAAAAkABMACAAJAAcAAAAhABUACAAJAAgAAAAbABYACAAJAAgAAAAUABIACQAAAAAAAAAVABIACQABAAAAAAAWABIACQACAAAAAAAXABIACQAAAAAAAAAYABIACQABAAAAAAAZABIACQACAAAAAAA=")
+tile_set = SubResource("TileSet_oslnl")
+
+[node name="Fg" type="Node" parent="Game"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Game/Fg"]
+layer = 1
+
+[node name="Fog" type="ParallaxLayer" parent="Game/Fg/ParallaxBackground"]
+z_index = 2
+position = Vector2(-28, -36)
+motion_mirroring = Vector2(320, 180)
+script = SubResource("GDScript_4pqbp")
+
+[node name="BgCloud" type="Sprite2D" parent="Game/Fg/ParallaxBackground/Fog"]
+modulate = Color(1, 1, 1, 0.258824)
+z_index = 12
+position = Vector2(188, 207)
+scale = Vector2(1, -1)
+
+[node name="Other" type="Node" parent="Game"]
+
+[node name="Logo" type="Node" parent="Game/Other"]
+
+[node name="GameLogo" type="Sprite2D" parent="Game/Other/Logo"]
+unique_name_in_owner = true
+position = Vector2(72, 45)
+scale = Vector2(0.146159, 0.141113)
+texture = ExtResource("11_widou")
+region_enabled = true
+region_rect = Rect2(349, 323, 811.5, 327)
+
+[node name="Menu" type="Control" parent="Game/Other" node_paths=PackedStringArray("arrow_node", "button_nodes")]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_8cpu2")
+arrow_node = NodePath("arrow")
+button_nodes = [NodePath("Play"), NodePath("Settings"), NodePath("Credits"), NodePath("Exit")]
+arrow_distance_from_button = 10
+button_selected_color = Color(1, 0.71586, 0.716005, 1)
+
+[node name="Play" type="Button" parent="Game/Other/Menu"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 75.0
+offset_right = 88.0
+offset_bottom = 107.0
+theme_override_colors/font_outline_color = Color(0.266667, 0.176471, 0.137255, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("24_ayn3n")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ayn3n")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_py2ge")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ifxty")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_wm46x")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_go30u")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_dji77")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_keyrt")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_0hhrj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1abay")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_b5l24")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fumqw")
+text = "PLay"
+flat = true
+
+[node name="Settings" type="Button" parent="Game/Other/Menu"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 99.0
+offset_right = 96.0
+offset_bottom = 131.0
+theme_override_colors/font_outline_color = Color(0.266667, 0.176471, 0.137255, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("24_ayn3n")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ayn3n")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_py2ge")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ifxty")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_wm46x")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_go30u")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_dji77")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_keyrt")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_0hhrj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1abay")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_b5l24")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fumqw")
+text = "Settings"
+flat = true
+
+[node name="Credits" type="Button" parent="Game/Other/Menu"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 120.0
+offset_right = 107.0
+offset_bottom = 152.0
+theme_override_colors/font_outline_color = Color(0.266667, 0.176471, 0.137255, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("24_ayn3n")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ayn3n")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_py2ge")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ifxty")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_wm46x")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_go30u")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_dji77")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_keyrt")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_0hhrj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1abay")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_b5l24")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fumqw")
+text = "Credits"
+flat = true
+
+[node name="Exit" type="Button" parent="Game/Other/Menu"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 139.0
+offset_right = 85.0
+offset_bottom = 171.0
+theme_override_colors/font_outline_color = Color(0.266667, 0.176471, 0.137255, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("24_ayn3n")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ayn3n")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_py2ge")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ifxty")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_wm46x")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_go30u")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_dji77")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_keyrt")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_0hhrj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1abay")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_b5l24")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fumqw")
+text = "Exit
+"
+flat = true
+
+[node name="arrow" type="Sprite2D" parent="Game/Other/Menu"]
+position = Vector2(44, 91)
+texture = ExtResource("2_w2mlq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Game/Other"]
+
+[node name="ColorRect" type="ColorRect" parent="Game/Other/CanvasLayer"]
+visible = false
+material = SubResource("ShaderMaterial_go30u")
+offset_left = 304.0
+offset_top = 7.0
+offset_right = 629.0
+offset_bottom = 194.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Game/Other/CanvasLayer"]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_dji77")
+}
+
+[node name="Transition" type="CanvasLayer" parent="Game"]
+layer = 0
+
+[node name="ColorRect" type="ColorRect" parent="Game/Transition"]
+material = SubResource("ShaderMaterial_dji77")
+offset_left = -2.0
+offset_top = -3.0
+offset_right = 323.0
+offset_bottom = 184.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Game/Transition"]
+libraries = {
+&"": SubResource("AnimationLibrary_2dy8h")
+}
+
+[node name="Transition2" type="CanvasLayer" parent="Game"]
+layer = 0
+
+[node name="ColorRect" type="ColorRect" parent="Game/Transition2"]
+material = SubResource("ShaderMaterial_dji77")
+offset_left = -2.0
+offset_top = -3.0
+offset_right = 323.0
+offset_bottom = 184.0
+
+[node name="Transition_anim2" type="AnimationPlayer" parent="Game/Transition2"]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_nomyo")
+}
+
+[node name="Decores" type="Node" parent="Game"]
+
+[node name="Grass" type="Node" parent="Game/Decores"]
+
+[node name="Grass1" type="AnimatedSprite2D" parent="Game/Decores/Grass"]
+position = Vector2(217, 140)
+sprite_frames = SubResource("SpriteFrames_5ttid")
+autoplay = "default"
+frame_progress = 0.641827
+
+[node name="Grass2" type="AnimatedSprite2D" parent="Game/Decores/Grass"]
+position = Vector2(250, 140)
+sprite_frames = SubResource("SpriteFrames_5ttid")
+autoplay = "default"
+frame_progress = 0.259535
+
+[node name="Grass3" type="AnimatedSprite2D" parent="Game/Decores/Grass"]
+position = Vector2(288, 124)
+sprite_frames = SubResource("SpriteFrames_5ttid")
+autoplay = "default"
+frame_progress = 0.259535
+
+[node name="Grass4" type="AnimatedSprite2D" parent="Game/Decores/Grass"]
+position = Vector2(274, 140)
+sprite_frames = SubResource("SpriteFrames_5ttid")
+autoplay = "default"
+frame_progress = 0.259535
+
+[node name="Grass5" type="AnimatedSprite2D" parent="Game/Decores/Grass"]
+position = Vector2(298, 52)
+sprite_frames = SubResource("SpriteFrames_5ttid")
+autoplay = "default"
+frame_progress = 0.259535
+
+[node name="Grass6" type="AnimatedSprite2D" parent="Game/Decores/Grass"]
+position = Vector2(284, 81)
+rotation = -1.57421
+sprite_frames = SubResource("SpriteFrames_5ttid")
+autoplay = "default"
+frame_progress = 0.259535
+
+[node name="Grass7" type="AnimatedSprite2D" parent="Game/Decores/Grass"]
+position = Vector2(284, 64)
+rotation = -1.57421
+sprite_frames = SubResource("SpriteFrames_5ttid")
+autoplay = "default"
+frame_progress = 0.259535
+
+[node name="Stone" type="Node" parent="Game/Decores"]
+
+[node name="AncientRockA" type="Sprite2D" parent="Game/Decores/Stone"]
+position = Vector2(266, 120)
+texture = ExtResource("27_nomyo")
+
+[node name="AncientRockB" type="Sprite2D" parent="Game/Decores/Stone"]
+position = Vector2(188, 128)
+texture = ExtResource("28_rmma2")
+
+[node name="Player" type="Node" parent="Game/Decores"]
+
+[node name="Player" type="AnimatedSprite2D" parent="Game/Decores/Player"]
+position = Vector2(180, 128)
+scale = Vector2(-1, 1)
+sprite_frames = SubResource("SpriteFrames_1abay")
+autoplay = "default"
+frame_progress = 0.850693
+
+[node name="fern" type="Node" parent="Game/Decores"]
+
+[node name="FernLarge" type="Sprite2D" parent="Game/Decores"]
+material = SubResource("ShaderMaterial_15u4j")
+position = Vector2(265, 128)
+texture = ExtResource("39_8jund")
+
+[node name="FlowerB" type="Sprite2D" parent="Game/Decores"]
+material = SubResource("ShaderMaterial_15u4j")
+position = Vector2(232, 136)
+texture = ExtResource("40_afqpu")
+
+[node name="FlowerD" type="Sprite2D" parent="Game/Decores"]
+material = SubResource("ShaderMaterial_15u4j")
+position = Vector2(193, 136)
+texture = ExtResource("41_8rujg")
+
+[node name="FernLarge2" type="Sprite2D" parent="Game/Decores"]
+material = SubResource("ShaderMaterial_15u4j")
+position = Vector2(295, 40)
+texture = ExtResource("39_8jund")
+
+[node name="FernSmall" type="Sprite2D" parent="Game/Decores"]
+material = SubResource("ShaderMaterial_15u4j")
+position = Vector2(160, 136)
+texture = ExtResource("42_gxvyx")
+
+[node name="Setting" type="Node" parent="Game"]
+
+[node name="Setting_pannel" type="Panel" parent="Game/Setting"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_force_pass_scroll_events = false
+theme_override_styles/panel = SubResource("StyleBoxFlat_aeftt")
+script = ExtResource("27_wjvkk")
+
+[node name="Exit" type="Label" parent="Game/Setting/Setting_pannel"]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 11.0
+offset_right = 191.0
+offset_bottom = 43.0
+theme_override_colors/font_outline_color = Color(0.266667, 0.176471, 0.137255, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("24_ayn3n")
+theme_override_font_sizes/font_size = 19
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fumqw")
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Game/Setting/Setting_pannel"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 39.0
+offset_top = 8.0
+offset_right = 288.0
+offset_bottom = 8.0
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Game/Setting/Setting_pannel/MarginContainer"]
+layout_mode = 2
+
+[node name="Exit" type="Label" parent="Game/Setting/Setting_pannel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_outline_color = Color(0.266667, 0.176471, 0.137255, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("24_ayn3n")
+theme_override_font_sizes/font_size = 19
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fumqw")
+horizontal_alignment = 1
+
+[node name="Video_setting2" type="HBoxContainer" parent="Game/Setting/Setting_pannel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Screen_Shake" type="Label" parent="Game/Setting/Setting_pannel/MarginContainer/VBoxContainer/Video_setting2"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.266667, 0.176471, 0.137255, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("24_ayn3n")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fumqw")
+text = "Language"
+
+[node name="Control" type="Control" parent="Game/Setting/Setting_pannel/MarginContainer/VBoxContainer/Video_setting2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OptionButton" type="OptionButton" parent="Game/Setting/Setting_pannel/MarginContainer/VBoxContainer/Video_setting2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_xq5w6")
+theme_override_fonts/font = ExtResource("24_ayn3n")
+theme_override_font_sizes/font_size = 10
+selected = 1
+fit_to_longest_item = false
+item_count = 2
+popup/item_0/text = "Ar"
+popup/item_0/id = 0
+popup/item_1/text = "Eng"
+popup/item_1/id = 1
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Game/Setting/Setting_pannel/MarginContainer/VBoxContainer/Video_setting2"]
+custom_minimum_size = Vector2(50.215, 0)
+layout_mode = 2
+ratio = 0.3694
+stretch_mode = 3
+alignment_horizontal = 2
+
+[node name="Video_setting" type="HBoxContainer" parent="Game/Setting/Setting_pannel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Screen_Shake" type="Label" parent="Game/Setting/Setting_pannel/MarginContainer/VBoxContainer/Video_setting"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.266667, 0.176471, 0.137255, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("24_ayn3n")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fumqw")
+text = "Screen Shake"
+
+[node name="Control" type="Control" parent="Game/Setting/Setting_pannel/MarginContainer/VBoxContainer/Video_setting"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CheckBox" type="CheckBox" parent="Game/Setting/Setting_pannel/MarginContainer/VBoxContainer/Video_setting"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+theme_override_icons/checked = ExtResource("28_ynhyd")
+theme_override_icons/unchecked = ExtResource("29_i6iyw")
+flat = true
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Game/Setting/Setting_pannel/MarginContainer/VBoxContainer/Video_setting"]
+custom_minimum_size = Vector2(50.215, 0)
+layout_mode = 2
+ratio = 0.3694
+stretch_mode = 3
+alignment_horizontal = 2
+
+[node name="Music_setting1" type="HBoxContainer" parent="Game/Setting/Setting_pannel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Screen_Shake" type="Label" parent="Game/Setting/Setting_pannel/MarginContainer/VBoxContainer/Music_setting1"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.266667, 0.176471, 0.137255, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("24_ayn3n")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fumqw")
+text = "Master Music"
+
+[node name="Control" type="Control" parent="Game/Setting/Setting_pannel/MarginContainer/VBoxContainer/Music_setting1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Master_music_slider" type="HSlider" parent="Game/Setting/Setting_pannel/MarginContainer/VBoxContainer/Music_setting1"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_icons/grabber = ExtResource("30_a41eh")
+theme_override_icons/grabber_highlight = ExtResource("30_a41eh")
+theme_override_icons/grabber_disabled = ExtResource("30_a41eh")
+theme_override_icons/tick = ExtResource("30_a41eh")
+max_value = 1.0
+step = 0.2
+
+[node name="Control2" type="Control" parent="Game/Setting/Setting_pannel/MarginContainer/VBoxContainer/Music_setting1"]
+custom_minimum_size = Vector2(-0.01, 0)
+layout_mode = 2
+
+[node name="Music_setting2" type="HBoxContainer" parent="Game/Setting/Setting_pannel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Screen_Shake" type="Label" parent="Game/Setting/Setting_pannel/MarginContainer/VBoxContainer/Music_setting2"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.266667, 0.176471, 0.137255, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("24_ayn3n")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fumqw")
+text = "SFX Music      "
+
+[node name="Control" type="Control" parent="Game/Setting/Setting_pannel/MarginContainer/VBoxContainer/Music_setting2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SFX_music_slider" type="HSlider" parent="Game/Setting/Setting_pannel/MarginContainer/VBoxContainer/Music_setting2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_icons/grabber = ExtResource("30_a41eh")
+theme_override_icons/grabber_highlight = ExtResource("30_a41eh")
+theme_override_icons/grabber_disabled = ExtResource("30_a41eh")
+theme_override_icons/tick = ExtResource("30_a41eh")
+max_value = 1.0
+step = 0.2
+
+[node name="Control2" type="Control" parent="Game/Setting/Setting_pannel/MarginContainer/VBoxContainer/Music_setting2"]
+custom_minimum_size = Vector2(-0.01, 0)
+layout_mode = 2
+
+[node name="KeyboardBind" type="Button" parent="Game/Setting/Setting_pannel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_colors/font_outline_color = Color(0.266667, 0.176471, 0.137255, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("24_ayn3n")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fumqw")
+text = "KeyBoard Bind"
+
+[node name="Back" type="Button" parent="Game/Setting/Setting_pannel"]
+layout_mode = 0
+offset_left = 280.0
+offset_top = -1.0
+offset_right = 313.0
+offset_bottom = 30.0
+theme_override_colors/font_outline_color = Color(0.266667, 0.176471, 0.137255, 1)
+theme_override_constants/outline_size = 5
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dkni0")
+text = "X"
+flat = true
+
+[node name="InputSetting" parent="Game/Setting" instance=ExtResource("27_dkni0")]
+unique_name_in_owner = true
+visible = false
+script = SubResource("GDScript_wjvkk")
+
+[node name="SaveSlots" type="Node" parent="."]
+
+[node name="SaveSlots" parent="SaveSlots" instance=ExtResource("43_0tsba")]
+unique_name_in_owner = true
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="Save_Slot2" parent="SaveSlots/SaveSlots" index="2"]
+mouse_force_pass_scroll_events = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("44_0tsba")
+volume_db = 24.0
+autoplay = true
+mix_target = 1
+
+[connection signal="animation_finished" from="Game/Transition/AnimationPlayer" to="Game/Other/Menu" method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="Game/Transition2/Transition_anim2" to="SaveSlots/SaveSlots/Save_Slot" method="_on_transition_anim_2_animation_finished"]
+[connection signal="toggled" from="Game/Setting/Setting_pannel/MarginContainer/VBoxContainer/Video_setting/CheckBox" to="Game/Setting/Setting_pannel" method="_on_check_box_toggled"]
+[connection signal="drag_ended" from="Game/Setting/Setting_pannel/MarginContainer/VBoxContainer/Music_setting1/Master_music_slider" to="Game/Setting/Setting_pannel" method="_on_master_music_slider_drag_ended"]
+[connection signal="value_changed" from="Game/Setting/Setting_pannel/MarginContainer/VBoxContainer/Music_setting1/Master_music_slider" to="Game/Setting/Setting_pannel" method="_on_master_music_slider_value_changed"]
+[connection signal="drag_ended" from="Game/Setting/Setting_pannel/MarginContainer/VBoxContainer/Music_setting2/SFX_music_slider" to="Game/Setting/Setting_pannel" method="_on_sfx_music_slider_drag_ended"]
+[connection signal="value_changed" from="Game/Setting/Setting_pannel/MarginContainer/VBoxContainer/Music_setting2/SFX_music_slider" to="Game/Setting/Setting_pannel" method="_on_sfx_music_slider_value_changed"]
+[connection signal="pressed" from="Game/Setting/Setting_pannel/MarginContainer/VBoxContainer/KeyboardBind" to="Game/Setting/Setting_pannel" method="_on_keyboard_bind_pressed"]
+[connection signal="pressed" from="Game/Setting/Setting_pannel/Back" to="Game/Setting/Setting_pannel" method="_on_back_pressed"]
+[connection signal="pressed" from="Game/Setting/InputSetting/Back" to="Game/Setting/InputSetting" method="_on_back_pressed"]
+
+[editable path="Game/Setting/InputSetting"]
+[editable path="SaveSlots/SaveSlots"]

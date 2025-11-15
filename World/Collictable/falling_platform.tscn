@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://ddnnfpry5gsro"]
+
+[ext_resource type="Texture2D" uid="uid://civp8enny3ver" path="res://World/Collictable/outline.png" id="1_ofrnd"]
+[ext_resource type="Script" path="res://World/Collictable/falling_platform.gd" id="1_ul1v4"]
+[ext_resource type="Texture2D" uid="uid://c15e27clg4ye5" path="res://World/Collictable/falling_a.png" id="2_ul1v4"]
+[ext_resource type="Texture2D" uid="uid://chldrntl15vgo" path="res://World/Collictable/falling_b.png" id="3_luics"]
+[ext_resource type="Texture2D" uid="uid://3gge7vivbux3" path="res://World/Collictable/falling_f.png" id="4_uukpe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n3c7y"]
+size = Vector2(8.19058, 7.53436)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vsgso"]
+size = Vector2(22.8833, 8.06904)
+
+[node name="platform" type="Node2D"]
+script = ExtResource("1_ul1v4")
+
+[node name="Outline" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(32.1068, 1.64083)
+scale = Vector2(0.970826, 1.11911)
+texture = ExtResource("1_ofrnd")
+
+[node name="Piece1" type="RigidBody2D" parent="."]
+
+[node name="FallingA" type="Sprite2D" parent="Piece1"]
+position = Vector2(20, 0)
+texture = ExtResource("2_ul1v4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Piece1"]
+position = Vector2(20.116, 0.205973)
+shape = SubResource("RectangleShape2D_n3c7y")
+
+[node name="Piece2" type="RigidBody2D" parent="."]
+
+[node name="FallingA3" type="Sprite2D" parent="Piece2"]
+position = Vector2(27.9515, 0.00360966)
+texture = ExtResource("3_luics")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Piece2"]
+position = Vector2(27.7057, 0.27262)
+shape = SubResource("RectangleShape2D_n3c7y")
+
+[node name="Piece3" type="RigidBody2D" parent="."]
+
+[node name="FallingA2" type="Sprite2D" parent="Piece3"]
+position = Vector2(35.9187, 5.79357e-05)
+texture = ExtResource("3_luics")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Piece3"]
+position = Vector2(35.8128, 0.332051)
+shape = SubResource("RectangleShape2D_n3c7y")
+
+[node name="Piece4" type="RigidBody2D" parent="."]
+
+[node name="FallingC" type="Sprite2D" parent="Piece4"]
+position = Vector2(43.8965, 0.00253439)
+rotation = 3.14159
+texture = ExtResource("4_uukpe")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Piece4"]
+position = Vector2(43.1884, 0.269013)
+shape = SubResource("RectangleShape2D_n3c7y")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+position = Vector2(33.8375, -0.099503)
+shape = SubResource("RectangleShape2D_vsgso")
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_area_2d_body_entered"]

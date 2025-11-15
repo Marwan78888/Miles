@@ -1,0 +1,102 @@
+[gd_scene load_steps=11 format=3 uid="uid://dx6v41imyecrg"]
+
+[ext_resource type="Texture2D" uid="uid://ba03rr351asut" path="res://Assets/Decors/Door/door01.png" id="1_iv6x6"]
+[ext_resource type="Script" uid="uid://b8erkk011p257" path="res://Scripts/Decores/door_house.gd" id="1_pexga"]
+[ext_resource type="Texture2D" uid="uid://bksviuj0d5bl6" path="res://Assets/Decors/Door/door02.png" id="2_pexga"]
+[ext_resource type="Texture2D" uid="uid://dt0c1g5qn15b" path="res://Assets/Decors/Door/door03.png" id="3_3w6q8"]
+[ext_resource type="Texture2D" uid="uid://bbnhke82iasdd" path="res://Assets/Decors/Door/door04.png" id="4_27iiu"]
+[ext_resource type="Texture2D" uid="uid://cbvaqhibh86jh" path="res://Assets/Decors/Door/door00.png" id="5_fvbwr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o0bv5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_iv6x6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_pexga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3w6q8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_27iiu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fvbwr")
+}],
+"loop": false,
+"name": &"close",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_fvbwr")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_fvbwr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_27iiu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3w6q8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_pexga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_iv6x6")
+}],
+"loop": false,
+"name": &"open",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3w6q8"]
+size = Vector2(11, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_27iiu"]
+size = Vector2(7, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pexga"]
+size = Vector2(24, 1)
+
+[node name="Door_House" type="Node2D"]
+script = ExtResource("1_pexga")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_o0bv5")
+animation = &"close"
+autoplay = "idle"
+frame = 4
+frame_progress = 1.0
+
+[node name="Open" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Open"]
+position = Vector2(-6.5, 11.5)
+shape = SubResource("RectangleShape2D_3w6q8")
+
+[node name="Close" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Close"]
+position = Vector2(9.50562, 11.5034)
+shape = SubResource("RectangleShape2D_27iiu")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-7.10543e-15, 0)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_pexga")
+one_way_collision = true
+
+[connection signal="body_entered" from="Open" to="." method="_on_open_body_entered"]
+[connection signal="body_entered" from="Close" to="." method="_on_close_body_entered"]

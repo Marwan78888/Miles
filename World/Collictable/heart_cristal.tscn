@@ -1,0 +1,130 @@
+[gd_scene load_steps=20 format=3 uid="uid://brcjvlpm0grp5"]
+
+[ext_resource type="Script" path="res://Scenes/Collictable/heart_cristal.gd" id="1_5bxaj"]
+[ext_resource type="Texture2D" uid="uid://xxs1ckc1tncv" path="res://Assets/Collectables/Gameplay/collectables/strawberry/normal00.png" id="1_x8wgy"]
+[ext_resource type="Texture2D" uid="uid://2n0n15w3gvq8" path="res://Assets/Collectables/Gameplay/collectables/strawberry/normal01.png" id="2_5bxaj"]
+[ext_resource type="Texture2D" uid="uid://dwl7aqs58fe2e" path="res://Assets/Collectables/Gameplay/collectables/strawberry/normal02.png" id="3_y4q1p"]
+[ext_resource type="Texture2D" uid="uid://br2bfoljqqdd6" path="res://Assets/Collectables/Gameplay/collectables/strawberry/normal03.png" id="4_akni8"]
+[ext_resource type="Texture2D" uid="uid://cu1b6fujl2g84" path="res://Assets/Collectables/Gameplay/collectables/strawberry/normal04.png" id="5_7yn08"]
+[ext_resource type="Texture2D" uid="uid://cildjxlutllrv" path="res://Assets/Collectables/Gameplay/collectables/strawberry/normal05.png" id="6_wxa4o"]
+[ext_resource type="Texture2D" uid="uid://bpq1oq0jgeakc" path="res://Assets/Collectables/Gameplay/collectables/strawberry/normal06.png" id="7_7g122"]
+[ext_resource type="Texture2D" uid="uid://bcl1v6rds4kfv" path="res://Assets/Collectables/Gameplay/collectables/strawberry/normal07.png" id="8_vcpv2"]
+[ext_resource type="Texture2D" uid="uid://doqp807ijf4dc" path="res://Assets/Collectables/Gameplay/collectables/strawberry/normal08.png" id="9_n6grr"]
+[ext_resource type="Texture2D" uid="uid://ddp5xnfth2j4y" path="res://Assets/Collectables/Gameplay/collectables/strawberry/normal09.png" id="10_syem7"]
+[ext_resource type="Texture2D" uid="uid://cdgt1ofn6e10l" path="res://Assets/Collectables/Gameplay/collectables/strawberry/normal10.png" id="11_d1dp8"]
+[ext_resource type="Texture2D" uid="uid://b2hqrl5xtpabh" path="res://Assets/Collectables/Gameplay/collectables/strawberry/normal57.png" id="12_3iq6e"]
+[ext_resource type="Texture2D" uid="uid://clgre6wmuxmor" path="res://Assets/Collectables/Gameplay/collectables/strawberry/normal58.png" id="13_26mu6"]
+[ext_resource type="Texture2D" uid="uid://vcqvwhxtvpvm" path="res://Assets/Collectables/Gameplay/collectables/strawberry/normal59.png" id="14_k3qlp"]
+[ext_resource type="Texture2D" uid="uid://d1bb4p33to4mb" path="res://Assets/Collectables/Gameplay/collectables/strawberry/normal60.png" id="15_2y1ws"]
+[ext_resource type="Texture2D" uid="uid://cf1mp8do5gpnn" path="res://Assets/Collectables/Gameplay/collectables/strawberry/normal61.png" id="16_u7emj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e0qj0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_x8wgy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5bxaj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_y4q1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_akni8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7yn08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wxa4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7g122")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vcpv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_n6grr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_syem7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_d1dp8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_3iq6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_26mu6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_k3qlp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_2y1ws")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_u7emj")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"collected",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_x8wgy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5bxaj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_y4q1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_akni8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7yn08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wxa4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7g122")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.5
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eys80"]
+radius = 5.29734
+height = 10.5947
+
+[node name="HeartCristal" type="Area2D"]
+script = ExtResource("1_5bxaj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_e0qj0")
+animation = &"collected"
+autoplay = "idle"
+frame = 19
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_eys80")

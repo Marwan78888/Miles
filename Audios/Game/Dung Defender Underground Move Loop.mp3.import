@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://6ndvu53m5ovw"
+path="res://.godot/imported/Dung Defender Underground Move Loop.mp3-ff0038122d81f080fce68c37bfedb131.mp3str"
+
+[deps]
+
+source_file="res://Audios/Game/Dung Defender Underground Move Loop.mp3"
+dest_files=["res://.godot/imported/Dung Defender Underground Move Loop.mp3-ff0038122d81f080fce68c37bfedb131.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

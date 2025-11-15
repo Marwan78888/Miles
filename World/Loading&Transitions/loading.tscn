@@ -1,0 +1,94 @@
+[gd_scene load_steps=14 format=3 uid="uid://baskodytwjf28"]
+
+[ext_resource type="Texture2D" uid="uid://da0acxtte6vlc" path="res://Assets/Characters/Player/runSlow00.png" id="1_djc8u"]
+[ext_resource type="Script" uid="uid://5binr5wgcau1" path="res://Scripts/Loading&transitions/loading.gd" id="1_r31uy"]
+[ext_resource type="Texture2D" uid="uid://4exfhth8kyiv" path="res://Assets/Characters/Player/runSlow01.png" id="2_r31uy"]
+[ext_resource type="Texture2D" uid="uid://dw4mpmy27l4or" path="res://Assets/Characters/Player/runSlow02.png" id="3_1jefh"]
+[ext_resource type="Texture2D" uid="uid://dp8ydxa5j4euy" path="res://Assets/Characters/Player/runSlow03.png" id="4_e6un3"]
+[ext_resource type="Texture2D" uid="uid://dhxfyym8sg3vh" path="res://Assets/Characters/Player/runSlow04.png" id="5_um6vo"]
+[ext_resource type="Texture2D" uid="uid://c8t75srlfd58p" path="res://Assets/Characters/Player/runSlow05.png" id="6_0vq8y"]
+[ext_resource type="Texture2D" uid="uid://6sy8exai2r2" path="res://Assets/Characters/Player/runSlow06.png" id="7_saaob"]
+[ext_resource type="Texture2D" uid="uid://cd4pmvdm37y4x" path="res://Assets/Characters/Player/runSlow07.png" id="8_sn0rk"]
+[ext_resource type="Texture2D" uid="uid://c60mypuprdowe" path="res://Assets/Characters/Player/runSlow08.png" id="9_o7ljj"]
+[ext_resource type="Texture2D" uid="uid://b1i8ik54wq58h" path="res://Assets/Characters/Player/runSlow09.png" id="10_lgeps"]
+[ext_resource type="FontFile" uid="uid://ddvfoyjuleyn" path="res://Save/Fonts/PlaypenSansArabic-Bold.ttf" id="11_8adn8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xy6qt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_djc8u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_r31uy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1jefh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e6un3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_um6vo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0vq8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_saaob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_sn0rk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_o7ljj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_lgeps")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="Loading" type="Control" node_paths=PackedStringArray("text")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r31uy")
+text = NodePath("Label")
+wave_height = 3.3
+scale_speed = 3.0
+scale_intensity = 0.1
+scale_offset = 0.2
+loading_duration = 4.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(296.36, 146.75)
+sprite_frames = SubResource("SpriteFrames_xy6qt")
+autoplay = "default"
+frame_progress = 0.266896
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 279.063
+offset_top = 162.208
+offset_right = 343.063
+offset_bottom = 219.208
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("11_8adn8")
+theme_override_font_sizes/font_size = 9
+text = "Loading
+"

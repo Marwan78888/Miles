@@ -1,0 +1,14 @@
+~ start
+Robin: [speed=0.3]Oh... [wait=0.5][shake rate=20 level=10]Miles![/shake] Where were you?![wait=0.4]  
+Miles: [speed=0.25]I... I was there, Robin... [wait=0.3]I saw everything... [wait=0.4]I couldn’t... I couldn’t save him...[/speed]  
+Robin: [wave amp=20 freq=5]What...?[/wave] Miles... [wait=0.3]what do you mean...? [wait=0.3]What happened?!  
+Miles: [speed=0.3]The trip... [wait=0.3]it was supposed to be peaceful... [wait=0.4]Just me and Dad... [wait=0.5]then the sky... turned red...[/speed]  
+Miles: [speed=0.3][wave amp=25 freq=5]That monster...[/wave] it came from the fog... [wait=0.3]its eyes... [wait=0.3]they were glowing... [wait=0.3]I can still see them when I close mine...[/speed]  
+Robin: [speed=0.3]Oh my god... [wait=0.4]Miles... [wait=0.3]your father... he—  
+Miles: [shake rate=30 level=12]He fought to protect me![/shake] [wait=0.3]He told me to run— [wait=0.4]and I did! [wait=0.4]I ran, Robin! [wait=0.3]I left him there!![/speed]  
+Robin: [speed=0.3]Miles... [wait=0.4]you did what you had to... [wait=0.3]no one blames you...  
+Miles: [speed=0.3]But *I* do! [wait=0.4][shake rate=20 level=10]Every second![/shake] [wait=0.3]I hear him calling my name... [wait=0.4]and I can’t forget it...[/speed]  
+Robin: [speed=0.3][wave amp=20 freq=4]Then don’t forget.[/wave] [wait=0.3]Remember him, Miles... [wait=0.3]and fight. [wait=0.4]Bring him back... [wait=0.3]end what started that night.[/speed]  
+Miles: [speed=0.3]I will... [wait=0.3]I’ll find him... [wait=0.3][wave amp=25 freq=5]I’ll find that monster...[/wave] [wait=0.4][shake rate=25 level=10]and I’ll make it pay![/shake][/speed]
+
+=> END

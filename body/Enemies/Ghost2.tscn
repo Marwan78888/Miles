@@ -1,0 +1,202 @@
+[gd_scene load_steps=16 format=3 uid="uid://cqrfj7042u0i4"]
+
+[ext_resource type="Texture2D" uid="uid://bsw8b6uwkrtwh" path="res://Assets/Danger/Gost/MiniGhost_Idle.png" id="2_q2ta5"]
+[ext_resource type="Script" uid="uid://bc0fjaw3sdwk0" path="res://Scripts/Dangers/Death_Treager/death_trigger.gd" id="3_isly2"]
+
+[sub_resource type="GDScript" id="GDScript_twwsx"]
+script/source = "extends CharacterBody2D
+
+# Exported variables for easy tweaking in the editor
+@export_group(\"Movement\")
+@export var move_speed: float = 100.0
+@export var start_direction: int = 1  # 1 for right, -1 for left
+@export var patrol_duration: float = 2.0  # Time before flipping direction
+
+@export_group(\"Float Effect\")
+@export var float_amplitude: float = 10.0
+@export var float_frequency: float = 2.0
+
+@export_group(\"Smooth Movement\")
+@export var acceleration: float = 300.0
+@export var deceleration: float = 400.0
+
+# Internal variables
+var current_float_time: float = 0.0
+var base_position: Vector2 = Vector2.ZERO  # Store full base position
+var current_velocity_y: float = 0.0
+var direction: int = 1
+
+# Timer
+var patrol_timer: Timer
+
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+
+func _ready() -> void:
+	# Store the initial position as base
+	base_position = global_position
+	direction = start_direction
+	animated_sprite.scale = Vector2(1.014, 1.014)
+	
+	# Setup patrol timer
+	setup_timer()
+	
+	# Play the idle animation
+	if animated_sprite and animated_sprite.sprite_frames.has_animation(\"idle\"):
+		animated_sprite.play(\"idle\")
+
+func setup_timer() -> void:
+	patrol_timer = Timer.new()
+	add_child(patrol_timer)
+	patrol_timer.wait_time = patrol_duration
+	patrol_timer.one_shot = false
+	patrol_timer.timeout.connect(_on_patrol_timer_timeout)
+	patrol_timer.start()
+
+func _physics_process(delta: float) -> void:
+	# Calculate target velocity for vertical movement
+	var target_velocity_y = direction * move_speed
+	
+	# Smooth acceleration/deceleration
+	if abs(current_velocity_y) < abs(target_velocity_y):
+		current_velocity_y = move_toward(current_velocity_y, target_velocity_y, acceleration * delta)
+	else:
+		current_velocity_y = move_toward(current_velocity_y, target_velocity_y, deceleration * delta)
+	
+	# Set the velocity for vertical movement
+	velocity.y = current_velocity_y
+	velocity.x = 0
+	
+	# Move vertically
+	move_and_slide()
+	
+	# Update base position based on actual movement (CRITICAL FIX)
+	base_position.y = global_position.y
+	
+	# Apply the floaty sine wave effect on X axis
+	current_float_time += delta
+	var float_offset = sin(current_float_time * float_frequency) * float_amplitude
+	
+	# Set final position: base position + float offset
+	global_position.x = base_position.x + float_offset
+
+func _on_patrol_timer_timeout() -> void:
+	flip_direction()
+
+func flip_direction() -> void:
+	# Reverse direction
+	direction *= -1
+	
+	# Reset velocity to prevent sliding
+	current_velocity_y = 0
+	velocity.y = 0
+	
+	# Keep sprite scale
+	animated_sprite.scale = Vector2(1.014, 1.014)
+	
+	# Restart the timer
+	if patrol_timer:
+		patrol_timer.start()
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8p0a"]
+atlas = ExtResource("2_q2ta5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybifw"]
+atlas = ExtResource("2_q2ta5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjwd2"]
+atlas = ExtResource("2_q2ta5")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6s0tj"]
+atlas = ExtResource("2_q2ta5")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjas5"]
+atlas = ExtResource("2_q2ta5")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87cfo"]
+atlas = ExtResource("2_q2ta5")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02bxp"]
+atlas = ExtResource("2_q2ta5")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gnp4"]
+atlas = ExtResource("2_q2ta5")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jihvr"]
+atlas = ExtResource("2_q2ta5")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_76c36"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8p0a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybifw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjwd2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6s0tj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjas5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87cfo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02bxp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gnp4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jihvr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ci2w0"]
+radius = 6.57605
+height = 13.4328
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_twwsx"]
+radius = 5.93119
+
+[node name="Ghost" type="CharacterBody2D"]
+scale = Vector2(1.014, 1.014)
+script = SubResource("GDScript_twwsx")
+start_direction = -1
+float_amplitude = 4.0
+float_frequency = 0.2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.014, 1.014)
+sprite_frames = SubResource("SpriteFrames_76c36")
+autoplay = "default"
+frame_progress = 0.280564
+
+[node name="DeathTrigger" type="Area2D" parent="."]
+script = ExtResource("3_isly2")
+show_debug_messages = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathTrigger"]
+position = Vector2(0.0287615, -0.0027256)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ci2w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_twwsx")

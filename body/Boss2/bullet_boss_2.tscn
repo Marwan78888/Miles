@@ -1,0 +1,68 @@
+[gd_scene load_steps=14 format=3 uid="uid://cnmibbfobnbcy"]
+
+[ext_resource type="Script" uid="uid://blfyxh5kkjxme" path="res://body/Bullets/bullet.gd" id="1_i6urm"]
+[ext_resource type="Texture2D" uid="uid://bs171easnetki" path="res://Assets/New/pelletEmitter/pink/projectile00.png" id="1_xk5by"]
+[ext_resource type="Texture2D" uid="uid://4lbrxtirgw1e" path="res://Assets/New/pelletEmitter/pink/projectile01.png" id="2_i6urm"]
+[ext_resource type="Texture2D" uid="uid://cosmgn3mls5op" path="res://Assets/New/pelletEmitter/pink/projectile02.png" id="3_0g7tm"]
+[ext_resource type="Texture2D" uid="uid://djpiicxqtar7b" path="res://Assets/New/pelletEmitter/pink/projectile03.png" id="4_pmg6s"]
+[ext_resource type="Texture2D" uid="uid://bpo725s2rp4b4" path="res://Assets/New/pelletEmitter/pink/projectile04.png" id="5_0s5m3"]
+[ext_resource type="Texture2D" uid="uid://cy7tg8ffbc4y8" path="res://Assets/New/pelletEmitter/pink/projectile05.png" id="6_3pbt7"]
+[ext_resource type="Texture2D" uid="uid://p7hugxlhxy7n" path="res://Assets/New/pelletEmitter/pink/projectile06.png" id="7_cncok"]
+[ext_resource type="Texture2D" uid="uid://dbjw40munfktc" path="res://Assets/New/pelletEmitter/pink/projectile07.png" id="8_xp4su"]
+[ext_resource type="Texture2D" uid="uid://cpg7fh603c57x" path="res://Assets/New/pelletEmitter/pink/projectile08.png" id="9_iwd48"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p1yoq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xk5by")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_i6urm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0g7tm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pmg6s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0s5m3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3pbt7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_cncok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xp4su")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_iwd48")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xk5by"]
+radius = 3.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0g7tm"]
+radius = 14.0
+
+[node name="Bullet_boss2" type="RigidBody2D"]
+script = ExtResource("1_i6urm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_p1yoq")
+frame_progress = 0.592588
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xk5by")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_0g7tm")

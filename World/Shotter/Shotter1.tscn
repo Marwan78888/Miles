@@ -1,0 +1,121 @@
+[gd_scene load_steps=23 format=3 uid="uid://b4ek6gcbahihq"]
+
+[ext_resource type="Script" uid="uid://dy7xc0k7smgr" path="res://Scripts/Dangers/Shotter1/shotter_1.gd" id="1_3ndo6"]
+[ext_resource type="Texture2D" uid="uid://baaeqilu4jv8c" path="res://Assets/New/pelletEmitter/both/emitter00.png" id="1_yljn1"]
+[ext_resource type="Texture2D" uid="uid://b1m54ftlr3x0v" path="res://Assets/New/pelletEmitter/both/emitter01.png" id="2_3ndo6"]
+[ext_resource type="PackedScene" uid="uid://by7ev4cnt0gx0" path="res://World/Shotter/bullet_shotter_1.tscn" id="2_lrpxo"]
+[ext_resource type="Texture2D" uid="uid://dau3v6a4cwvpo" path="res://Assets/New/pelletEmitter/both/emitter02.png" id="3_lrpxo"]
+[ext_resource type="Texture2D" uid="uid://bhdnpma0th67x" path="res://Assets/New/pelletEmitter/both/emitter03.png" id="4_stbq8"]
+[ext_resource type="Texture2D" uid="uid://dpnqofj74jpo6" path="res://Assets/New/pelletEmitter/both/emitter04.png" id="5_tweyd"]
+[ext_resource type="Texture2D" uid="uid://dtjnhhqyfieib" path="res://Assets/New/pelletEmitter/both/emitter05.png" id="6_qyrpn"]
+[ext_resource type="Texture2D" uid="uid://dafbsi3fqtqkw" path="res://Assets/New/pelletEmitter/both/emitter06.png" id="7_y446c"]
+[ext_resource type="Texture2D" uid="uid://dddl3ivucaacy" path="res://Assets/New/pelletEmitter/both/emitter07.png" id="8_t4px3"]
+[ext_resource type="Texture2D" uid="uid://dovx4hgcjkciq" path="res://Assets/New/pelletEmitter/both/emitter08.png" id="9_c3sl4"]
+[ext_resource type="Texture2D" uid="uid://ba8px86mv86rm" path="res://Assets/New/pelletEmitter/both/emitter09.png" id="10_6ali8"]
+[ext_resource type="Texture2D" uid="uid://pukuyge8bvlt" path="res://Assets/New/pelletEmitter/both/emitter10.png" id="11_aj514"]
+[ext_resource type="Texture2D" uid="uid://dyhppq4ol12b7" path="res://Assets/New/pelletEmitter/both/emitter11.png" id="12_aot5e"]
+[ext_resource type="Texture2D" uid="uid://cqbw5jxyy6rku" path="res://Assets/New/pelletEmitter/both/emitter12.png" id="13_p2qrp"]
+[ext_resource type="Texture2D" uid="uid://cobsbo40qcgjq" path="res://Assets/New/pelletEmitter/both/emitter13.png" id="14_h68p4"]
+[ext_resource type="Texture2D" uid="uid://bpql6qpq03f05" path="res://Assets/New/pelletEmitter/both/emitter14.png" id="15_erlul"]
+[ext_resource type="Texture2D" uid="uid://dhoeam2uecqpu" path="res://Assets/New/pelletEmitter/both/emitter15.png" id="16_7nxsb"]
+[ext_resource type="Script" uid="uid://bc0fjaw3sdwk0" path="res://Scripts/Dangers/Death_Treager/death_trigger.gd" id="19_stbq8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k6gk8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yljn1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3ndo6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lrpxo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_stbq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tweyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qyrpn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_y446c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_t4px3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_c3sl4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6ali8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_aj514")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_aot5e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_p2qrp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_h68p4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_erlul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_7nxsb")
+}],
+"loop": false,
+"name": &"emitt",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yljn1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3ndo6"]
+radius = 4.47729
+height = 9.52767
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tweyd"]
+radius = 5.13319
+height = 10.2664
+
+[node name="Shotter1" type="StaticBody2D" node_paths=PackedStringArray("bullet_spawn_point")]
+script = ExtResource("1_3ndo6")
+bullet_scene = ExtResource("2_lrpxo")
+bullet_spawn_point = NodePath("Marker2D")
+sound_bus = "sfx"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_k6gk8")
+animation = &"emitt"
+frame = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-11.7743, 0.208395)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_3ndo6")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, 0.0839062)
+
+[node name="DeathTrigger" type="Area2D" parent="."]
+script = ExtResource("19_stbq8")
+show_debug_messages = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathTrigger"]
+position = Vector2(-11.8914, 0.283816)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_tweyd")
